@@ -73,10 +73,12 @@ public class UserService {
         user.setEmail(email);
         user.setEnabled(true);
 
+        // 用户名为空，返回
         if (username.equals("") || password.equals("")) {
             return 0;
         }
 
+        // 判断该用户是否已经被注册
         boolean exist = isExist(username);
 
         if (exist) {

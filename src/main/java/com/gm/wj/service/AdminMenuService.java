@@ -5,6 +5,7 @@ import com.gm.wj.entity.AdminMenu;
 import com.gm.wj.entity.AdminRoleMenu;
 import com.gm.wj.entity.AdminUserRole;
 import com.gm.wj.entity.User;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,7 @@ import java.util.stream.Collectors;
  * @date 2019/10
  */
 @Service
+@Slf4j
 public class AdminMenuService {
     @Autowired
     AdminMenuDAO adminMenuDAO;
@@ -39,10 +41,15 @@ public class AdminMenuService {
         // Get roles' ids of current user.
         List<Integer> rids = adminUserRoleService.listAllByUid(user.getId())
                 .stream().map(AdminUserRole::getRid).collect(Collectors.toList());
+        log.info("===rids=={}", rids.toString());
 
+        List<AdminRoleMenu> list = adminRoleMenuService.findAllByRid(rids);
+        log.info("===menuIds=={}", list.toString());
         // Get menu items of these roles.
         List<Integer> menuIds = adminRoleMenuService.findAllByRid(rids)
                 .stream().map(AdminRoleMenu::getMid).collect(Collectors.toList());
+        log.info("===menuIds=={}", menuIds.toString());
+
         List<AdminMenu> menus = adminMenuDAO.findAllById(menuIds).stream().distinct().collect(Collectors.toList());
 
         // Adjust the structure of the menu.

@@ -10,6 +10,11 @@ import org.springframework.web.servlet.config.annotation.*;
 @SpringBootConfiguration
 public class MyWebConfigurer implements WebMvcConfigurer {
 
+    /**
+     * 配置跨域调用API
+     *
+     * @param registry
+     */
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         //所有请求都允许跨域，使用这种配置方法就不能在 interceptor 中再配置 header 了
@@ -26,4 +31,13 @@ public class MyWebConfigurer implements WebMvcConfigurer {
         registry.addResourceHandler("/api/file/**").addResourceLocations("file:" + "d:/workspace/img/");
     }
 
+    /**
+     * 后台拦截器
+     *
+     * @param registry 拦截器
+     */
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        //registry.addInterceptor(getLogin)
+    }
 }

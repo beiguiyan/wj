@@ -4,7 +4,7 @@
 -- Records of admin_menu
 -- ----------------------------
 INSERT INTO `admin_menu` VALUES ('1', '/admin', 'AdminIndex', '首页', 'el-icon-s-home', 'AdminIndex', '0');
-INSERT INTO `admin_menu` VALUES ('2', '/admin/dashboard', 'DashboardAdmin', '运行情况', null, 'dashboard/admin/index', '1');
+INSERT INTO `admin_menu` VALUES ('2', '/admin/dashboard', 'DashboardAdmin', '店铺展示', null, 'dashboard/admin/index', '1');
 INSERT INTO `admin_menu` VALUES ('3', '/admin', 'Content', '订单管理', 'el-icon-tickets', 'AdminIndex', '0');
 INSERT INTO `admin_menu` VALUES ('4', '/admin', 'User', '用户管理', 'el-icon-user', 'AdminIndex', '0');
 INSERT INTO `admin_menu` VALUES ('5', '/admin', 'System', '系统配置', 'el-icon-s-tools', 'AdminIndex', '0');
@@ -40,7 +40,7 @@ INSERT INTO `admin_role_menu` VALUES ('23', '9', '1');
 INSERT INTO `admin_role_menu` VALUES ('24', '9', '2');
 INSERT INTO `admin_role_menu` VALUES ('77', '2', '1');
 INSERT INTO `admin_role_menu` VALUES ('78', '2', '2');
-INSERT INTO `admin_role_menu` VALUES ('79', '2', '4');
+INSERT INTO `admin_role_menu` VALUES ('79', '2', '3');
 INSERT INTO `admin_role_menu` VALUES ('80', '2', '8');
 INSERT INTO `admin_role_menu` VALUES ('81', '2', '9');
 INSERT INTO `admin_role_menu` VALUES ('82', '2', '10');
@@ -70,7 +70,7 @@ INSERT INTO `admin_role_permission` VALUES ('110', '1', '3');
 INSERT INTO `admin_user_role` VALUES ('40', '24', '2');
 INSERT INTO `admin_user_role` VALUES ('63', '3', '2');
 INSERT INTO `admin_user_role` VALUES ('64', '1', '1');
-INSERT INTO `admin_user_role` VALUES ('65', '2', '3');
+INSERT INTO `admin_user_role` VALUES ('65', '2', '2');
 INSERT INTO `admin_user_role` VALUES ('66', '2', '9');
 
 -- ----------------------------
@@ -120,3 +120,10 @@ INSERT INTO `jotter_article` VALUES ('3', '《白卷》项目简介', '<p><img s
 INSERT INTO `user` VALUES ('1', 'admin', '35b9529f89cfb9b848060ca576237e17', '8O+vDNr2sI3N82BI31fu1A==', '管理员', '12312312312', 'evan_nightly@163.com', '1');
 INSERT INTO `user` VALUES ('2', 'test', '85087738b6c1e1d212683bfafc163853', 'JBba3j5qRykIPJQYTNNH9A==', '测试', '12312312312', '123@123.com', '1');
 INSERT INTO `user` VALUES ('3', 'editor', '8583a2d965d6159edbf65c82d871fa3e', 'MZTe7Qwf9QgXBXrZzTIqJQ==', '编辑', null, null, '1');
+
+-- ----------------------------
+-- Records of Shop
+-- ----------------------------
+INSERT INTO `shop` VALUES ('1', '钟楼店', '张三', '西安市钟楼区32号天天乐商场1层', '108.9549', '34.265', '商铺', '1');
+INSERT INTO `shop` VALUES ('2', '新城店', '李四', '西安市新城区30号万达广场1层', '108.9550', '34.267', '商铺', '1');
+INSERT INTO `shop` VALUES ('3', '曲江店', '王五', '西安市曲江区2号天天乐商场1层', '108.9545', '34.262', '仓库', '2');

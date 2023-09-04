@@ -58,7 +58,7 @@ public class AdminPermissionService {
         List<Integer> rids = adminRoleService.listRolesByUser(username)
                 .stream().map(AdminRole::getId).collect(Collectors.toList());
 
-        List<Integer> pids = adminRolePermissionDAO.findAllByRid(rids)
+        List<Integer> pids = adminRolePermissionDAO.findAllByRidIn(rids)
                 .stream().map(AdminRolePermission::getPid).collect(Collectors.toList());
 
         List<AdminPermission> perms = adminPermissionDAO.findAllById(pids);
